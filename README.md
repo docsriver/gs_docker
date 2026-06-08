@@ -6,15 +6,7 @@
 внутри образа.
 
 Это **контейнерный аналог** [`gs_docsriver_listener`](https://github.com/docsriver/gs_docsriver_listener):
-оба реализуют один и тот же HTTP-контракт, который ждёт DocsRiver. Разница — в
-способе запуска:
-
-| | `gs_docker` | `gs_docsriver_listener` |
-|---|---|---|
-| Что это | Docker-контейнер | systemd-служба на хосте |
-| GhostScript | внутри образа | системный (`apt install ghostscript`) |
-| Сборка | `docker build` (нужен интернет) | не нужна |
-| Когда удобен | обычная установка | offline / без сборки образов |
+оба реализуют один и тот же HTTP-контракт, который ждёт DocsRiver. Данная версия также позволяет работать с исходными файлами в формате PCL.
 
 DocsRiver обращается к сервису по адресу из `HOST_URL` (по умолчанию
 `http://host.docker.internal:9080/` — захардкожено в DocsRiver), поэтому
